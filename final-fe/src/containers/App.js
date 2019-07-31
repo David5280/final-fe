@@ -1,8 +1,15 @@
 import React from 'react';
 import { getAnimals } from '../Utilz/apiCalls';
+import { loadAnimals, hasErrored } from '../actions';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends React.Component {
+  componentDidMount() {
+    getAnimals()
+    .then(data => this.props.loadAnimals(data))
+    .catch(error => this.props.hasErrored(error))
+  }
   render() {
     return (
       <div className="App">
@@ -14,4 +21,13 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// const mapStateToProps = (state) => ({
+
+// });
+
+const mapDispatchToProps = (dispatch) => ({
+  loadAnimals: (animals) => dispatch(loadAnimals(animals)),
+  hasErrored: (error) => dispatch(hasErrored(error))
+})
+
+export default connect(null, mapDispatchToProps)(App);
