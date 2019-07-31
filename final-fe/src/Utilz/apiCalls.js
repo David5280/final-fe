@@ -43,3 +43,16 @@ export const postDonation = async (donation) => {
     throw new Error('There was an error posting new donation...')
   }
 };
+
+
+export const deleteDonation = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3001/api/v1/reservations/${id}`, {method: 'DELETE'})
+    if (!response.ok) {
+      throw new Error('There was an error with the server')
+    }
+    console.log(response)
+  } catch (error) {
+    throw new Error('There was an error deleting this reservation...')
+  }
+}
