@@ -22,19 +22,19 @@ class App extends React.Component {
       this.props.doneLoading()
     }
   }
-  fetchAnimals() {
+  fetchAnimals = () => {
     getAnimals()
       .then(animals => this.props.loadAnimals(animals))
       .catch(error => this.props.hasErrored(error))
   }
-  fetchDonations() {
+  fetchDonations = () => {
     getDonations()
     .then(donations => this.props.loadDonations(donations))
     .catch(error => this.props.hasErrored(error))
   }
   addDonation(donation) {
-    const donationWithId = {...donation, ID: Date.now()}
-    postDonation(donationWithId);
+    const donationWithId = {...donation, Id: Date.now()}
+    postDonation(donationWithId)
   }
   render() {
     return (

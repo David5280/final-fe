@@ -29,10 +29,16 @@ export const postDonation = async (donation) => {
     const response = await fetch('http://localhost:3001/api/v1/donations/', {
       method: 'POST',
       body: JSON.stringify({
-        donation
-      })
+        name: donation.name,
+        donation: donation.donation,
+        id: donation.Id
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
     })
-    console.log(response)
+    const parsedResponse = await response.json();
+    return parsedResponse
   } catch (error) {
     throw new Error('There was an error posting new donation...')
   }
