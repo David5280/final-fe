@@ -3,6 +3,10 @@ export const loadAnimals = (animals) => ({
   animals
 });
 
+export const doneLoading = () => ({
+  type: 'DONE_LOADING',
+})
+
 export const hasErrored = (error) => ({
   type: 'HAS_ERRORED',
   error
