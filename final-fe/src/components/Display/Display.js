@@ -14,7 +14,7 @@ const Display = ({ animals, donations }) => {
   });
   const allDonations = donations.map(donation => {
     return (
-      <article className='donation-display'>
+      <article className='donation-display' key={donation.id}>
         <h3>Name:  {donation.name}</h3>
         <p>Amount:  {donation.donation}</p>
       </article>
@@ -23,10 +23,14 @@ const Display = ({ animals, donations }) => {
   return (
     <section className='info-display'>
       <section className='animal-container'>
+        <h2>Current Animals!</h2>
         {allAnimals}
       </section>
       <section className='donation-container'>
-        {allDonations}
+        <h2>Current Donations</h2>
+        <section className='donation-list'>
+          {allDonations}
+        </section>
       </section>
       </section>
   )
