@@ -1,4 +1,5 @@
 import React from 'react';
+import Display from '../components/Display/Display';
 import { getAnimals } from '../Utilz/apiCalls';
 import { loadAnimals, hasErrored, doneLoading } from '../actions';
 import { connect } from 'react-redux';
@@ -17,14 +18,15 @@ class App extends React.Component {
         <header className="App-header">
           <h1>ANIMAL RESCUE</h1>
         </header>
+        <Display animals={this.props.animals} />
       </div>
     );
   }
 }
 
-// const mapStateToProps = (state) => ({
-
-// });
+const mapStateToProps = (state) => ({
+  animals: state.animals
+});
 
 const mapDispatchToProps = (dispatch) => ({
   loadAnimals: (animals) => dispatch(loadAnimals(animals)),
@@ -32,4 +34,4 @@ const mapDispatchToProps = (dispatch) => ({
   doneLoading: (bool) => dispatch(doneLoading(bool))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
