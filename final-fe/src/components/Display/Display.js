@@ -5,7 +5,7 @@ const Display = ({ animals, donations }) => {
   const allAnimals =  animals.map(animal => {
     return (
       <article className='animal-display' key={animal.id}>
-        <h3>{animal.name}</h3>
+        <h3 className='animal-name'>{animal.name}</h3>
         <p>{animal.species}</p>
         <p>{animal.description}</p>
         <img src={animal.img} alt={animal.name} className='animal-img'/>
@@ -15,7 +15,7 @@ const Display = ({ animals, donations }) => {
   const allDonations = donations.map(donation => {
     return (
       <article className='donation-display' key={donation.id}>
-        <h3>Name:  {donation.name}</h3>
+        <h3 className='donation-name'>Name:  {donation.name}</h3>
         <p>Amount:  ${donation.donation}</p>
         <button id={donation.id} onclick={(e) => this.props.handleDelete(e)} />
       </article>
