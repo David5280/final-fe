@@ -4,7 +4,7 @@ import './Display.css';
 const Display = ({ animals, donations }) => {
   const allAnimals =  animals.map(animal => {
     return (
-      <article className='main-display' key={animal.id}>
+      <article className='animal-display' key={animal.id}>
         <h2>{animal.name}</h2>
         <p>{animal.species}</p>
         <p>{animal.description}</p>
@@ -14,18 +14,18 @@ const Display = ({ animals, donations }) => {
   });
   const allDonations = donations.map(donation => {
     return (
-      <article>
-        <h3>{donation.name}</h3>
-        <p>{donation.donation}</p>
+      <article className='donation-display'>
+        <h3>Name:  {donation.name}</h3>
+        <p>Amount:  {donation.donation}</p>
       </article>
     )
   })
   return (
     <section className='info-display'>
-      <section className='animal-display'>
+      <section className='animal-container'>
         {allAnimals}
       </section>
-      <section className='donation-display'>
+      <section className='donation-container'>
         {allDonations}
       </section>
       </section>
