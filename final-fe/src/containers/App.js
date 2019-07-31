@@ -29,7 +29,10 @@ class App extends React.Component {
         <header className="App-header">
           <h1>ANIMAL RESCUE</h1>
         </header>
-        <Display animals={this.props.animals} />
+        <Display 
+          animals={this.props.animals} 
+          donations={this.props.donations}
+        />
       </div>
     );
   }

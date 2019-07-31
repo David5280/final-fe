@@ -1,0 +1,21 @@
+.info-display {
+  display: flex;
+}
+
+animal-display {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+
+}
+
+.animal-img {
+  width: 40%;
+}
+
+.donation-display {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
