@@ -1,5 +1,3 @@
-
-
 export const animalReducer = (state = [], action) => {
   switch(action.type) {
     case 'LOAD_ANIMALS':

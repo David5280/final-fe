@@ -3,6 +3,11 @@ export const loadAnimals = (animals) => ({
   animals
 });
 
+export const loadDonations = (donations) => ({
+  type: 'LOAD_DONATIONS',
+  donations
+});
+
 export const doneLoading = () => ({
   type: 'DONE_LOADING',
 })
@@ -10,4 +15,9 @@ export const doneLoading = () => ({
 export const hasErrored = (error) => ({
   type: 'HAS_ERRORED',
   error
+});
+
+export const addDonation = (donation) => ({
+  type: 'ADD_DONATION',
+  donation
 });
