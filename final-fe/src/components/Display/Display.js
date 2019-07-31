@@ -17,7 +17,6 @@ const Display = ({ animals, donations }) => {
       <article className='donation-display' key={donation.id}>
         <h3 className='donation-name'>Name:  {donation.name}</h3>
         <p>Amount:  ${donation.donation}</p>
-        <button id={donation.id} onclick={(e) => this.props.handleDelete(e)} />
       </article>
     )
   })
