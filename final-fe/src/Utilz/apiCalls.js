@@ -42,4 +42,4 @@ export const postDonation = async (donation) => {
   } catch (error) {
     throw new Error('There was an error posting new donation...')
   }
-}
+};

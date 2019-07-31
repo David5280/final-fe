@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { addDonation } from '../../actions';
 import { connect } from 'react-redux';
+import './Form.css';
 
 export class Form extends Component {
 
