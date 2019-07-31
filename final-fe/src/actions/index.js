@@ -3,6 +3,11 @@ export const loadAnimals = (animals) => ({
   animals
 });
 
+export const loadDonations = (donations) => ({
+  type: 'LOAD_DONATIONS',
+  donations
+});
+
 export const doneLoading = () => ({
   type: 'DONE_LOADING',
 })
