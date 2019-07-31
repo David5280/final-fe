@@ -23,3 +23,23 @@ export const getDonations = async () => {
     throw new Error('There was an fetching donations...')
   }
 };
+
+export const postDonation = async (donation) => {
+  try {
+    const response = await fetch('http://localhost:3001/api/v1/donations/', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: donation.name,
+        donation: donation.donation,
+        id: donation.Id
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    const parsedResponse = await response.json();
+    return parsedResponse
+  } catch (error) {
+    throw new Error('There was an error posting new donation...')
+  }
+}

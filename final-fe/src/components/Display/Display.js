@@ -2,6 +2,7 @@ import React from 'react';
 import './Display.css';
 
 const Display = ({ animals, donations }) => {
+  console.log(donations)
   const allAnimals =  animals.map(animal => {
     return (
       <article className='main-display' key={animal.id}>

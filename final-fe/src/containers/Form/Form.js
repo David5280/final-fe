@@ -18,7 +18,7 @@ export class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addDonation(this.state)
+    this.props.donate(this.state)
     this.clearInputs()
   }
 
