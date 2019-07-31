@@ -1,7 +1,8 @@
 import React from 'react';
-import Display from '../components/Display/Display';
-import { getAnimals, getDonations } from '../Utilz/apiCalls';
-import { loadAnimals, loadDonations, hasErrored, doneLoading } from '../actions';
+import Display from '../../components/Display/Display';
+import Form from '../Form/Form';
+import { getAnimals, getDonations } from '../../Utilz/apiCalls';
+import { loadAnimals, loadDonations, hasErrored, doneLoading } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>ANIMAL RESCUE</h1>
         </header>
+        <Form />
         <Display 
           animals={this.props.animals} 
           donations={this.props.donations}

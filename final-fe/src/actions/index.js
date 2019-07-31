@@ -16,3 +16,8 @@ export const hasErrored = (error) => ({
   type: 'HAS_ERRORED',
   error
 });
+
+export const addDonation = (donation) => ({
+  type: 'ADD_DONATION',
+  donation
+});
