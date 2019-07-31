@@ -37,6 +37,9 @@ class App extends React.Component {
     const response = await postDonation(donationWithId)
     this.props.addDonation(response);
   }
+  deleteDonation = async (id) => {
+    
+  }
   render() {
     const loadingGif = <img src='https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif' alt='loading' className='loading-gif' />
     return (
