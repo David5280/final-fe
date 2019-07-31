@@ -32,9 +32,10 @@ class App extends React.Component {
     .then(donations => this.props.loadDonations(donations))
     .catch(error => this.props.hasErrored(error))
   }
-  addDonation(donation) {
+  addDonation = async (donation) => {
     const donationWithId = {...donation, Id: Date.now()}
-    postDonation(donationWithId)
+    const response = await postDonation(donationWithId)
+    this.props.addDonation(response);
   }
   render() {
     return (
