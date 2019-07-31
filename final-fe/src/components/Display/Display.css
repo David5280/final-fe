@@ -1,6 +1,5 @@
 .info-display {
   display: flex;
-  background-color: burlywood;
 }
 
 .animal-container {
@@ -16,6 +15,7 @@
   flex-wrap: wrap;
   border: 1px solid black;
   margin: 10px 0px;
+  background-color: rgba(128, 128, 128, .9);
 }
 
 .animal-img {
@@ -30,9 +30,28 @@
 }
 
 .donation-display {
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   border: 1px solid;
-  background-color: rgba(128, 128, 128, .3);
   height: fit-content;
+  min-height: 100px;
+  width: 45%;
+  background-color: #f1f1f1;
+}
+
+.donation-list {
+  margin-top: 10px;
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(128, 128, 128, .9);
+}
+
+h2 {
+  height: fit-content;
+  font-size: 30px;
+  font-stretch: 20%;
+  background-color: rgba(128, 128, 128, .9);
+  border: 1px solid black;
+  width: 100%;
 }

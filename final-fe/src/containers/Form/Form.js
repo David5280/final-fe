@@ -39,6 +39,7 @@ export class Form extends Component {
           name='name'
           onChange={(e) => this.handleChange(e)}
           value={this.state.name}
+          className='form-input'
         />
         <input  
           type='text'
@@ -46,9 +47,11 @@ export class Form extends Component {
           name='donation'
           onChange={(e) => this.handleChange(e)}
           value={this.state.donation}
+          className='form-input'
         />
         <button
           onClick={(e) => this.handleSubmit(e)}
+          className='form-input'
         >
           Make a Donation!
         </button>        
