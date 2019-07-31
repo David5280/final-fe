@@ -2,11 +2,11 @@ import React from 'react';
 import './Display.css';
 
 const Display = ({ animals, donations }) => {
-  console.log(donations)
   const allAnimals =  animals.map(animal => {
     return (
       <article className='main-display' key={animal.id}>
         <h2>{animal.name}</h2>
+        <p>{animal.species}</p>
         <p>{animal.description}</p>
         <img src={animal.img} alt={animal.name} className='animal-img'/>
       </article>
