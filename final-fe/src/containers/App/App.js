@@ -4,7 +4,7 @@ import Form from '../Form/Form';
 import { 
   getAnimals, 
   getDonations,
-  addDonation } from '../../Utilz/apiCalls';
+  postDonation } from '../../Utilz/apiCalls';
 import { 
   loadAnimals, 
   loadDonations, 
@@ -33,8 +33,8 @@ class App extends React.Component {
     .catch(error => this.props.hasErrored(error))
   }
   addDonation(donation) {
-    const donationWithID = {...donation, ID: Date.now()}
-    this.props.addDonation(donation);
+    const donationWithId = {...donation, ID: Date.now()}
+    postDonation(donationWithId);
   }
   render() {
     return (
