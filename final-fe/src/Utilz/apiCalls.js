@@ -7,7 +7,7 @@ export const getAnimals = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('There was an fetching animals...')
+    throw new Error('There was an error fetching animals...')
   }
 };
 
@@ -20,7 +20,7 @@ export const getDonations = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('There was an fetching donations...')
+    throw new Error('There was an error fetching donations...')
   }
 };
 

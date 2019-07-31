@@ -38,16 +38,20 @@ class App extends React.Component {
     this.props.addDonation(response);
   }
   render() {
+    const loadingGif = <img src='https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif' alt='loading' className='loading-gif' />
     return (
       <div className="App">
         <header className="App-header">
           <h1>ANIMAL RESCUE</h1>
         </header>
-        <Form donate={this.addDonation}/>
+        {<p className='error-msg'>{this.props.error.message}</p>}
+        {(this.props.loading) && loadingGif}
+        {(!this.props.loading && !this.props.error) && <Form donate={this.addDonation}/>}
+        {(!this.props.loading && !this.props.error) && 
         <Display 
           animals={this.props.animals} 
           donations={this.props.donations}
-        />
+        />}
       </div>
     );
   }
@@ -55,7 +59,9 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => ({
   animals: state.animals,
-  donations: state.donations
+  donations: state.donations,
+  loading: state.loading,
+  error: state.error
 });
 
 const mapDispatchToProps = (dispatch) => ({
