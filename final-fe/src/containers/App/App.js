@@ -1,8 +1,16 @@
 import React from 'react';
 import Display from '../../components/Display/Display';
 import Form from '../Form/Form';
-import { getAnimals, getDonations } from '../../Utilz/apiCalls';
-import { loadAnimals, loadDonations, hasErrored, doneLoading } from '../../actions';
+import { 
+  getAnimals, 
+  getDonations,
+  addDonation } from '../../Utilz/apiCalls';
+import { 
+  loadAnimals, 
+  loadDonations, 
+  hasErrored, 
+  doneLoading, 
+  addDonation } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
 
@@ -24,13 +32,17 @@ class App extends React.Component {
     .then(donations => this.props.loadDonations(donations))
     .catch(error => this.props.hasErrored(error))
   }
+  addDonation(donation) {
+    const donationWithID = {...donation, ID: Date.now()}
+    this.props.addDonation(donation);
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1>ANIMAL RESCUE</h1>
         </header>
-        <Form />
+        <Form donate={this.addDonation}/>
         <Display 
           animals={this.props.animals} 
           donations={this.props.donations}
@@ -48,6 +60,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   loadAnimals: (animals) => dispatch(loadAnimals(animals)),
   loadDonations: (donations) => dispatch(loadDonations(donations)),
+  addDonation: (donation) => dispatch(addDonation(donation)),
   hasErrored: (error) => dispatch(hasErrored(error)),
   doneLoading: (bool) => dispatch(doneLoading(bool))
 })
